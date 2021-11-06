@@ -1,4 +1,5 @@
 using book_web_api.Data;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,7 @@ namespace book_web_api
             );
 
             services.AddControllers();
+            services.AddMediatR(typeof(Startup));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "book_web_api", Version = "v1" });
